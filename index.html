@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS-game</title>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="parent-con">
+        <section class="score-board">
+            <div class="text-area">
+                Rock<br>
+                Paper<br>
+                Sissor
+            </div>
+            <div class="com-score">
+                <!-- <span>Computer Score</span> -->
+                COMPUTER SCORE <br>
+                <span id="cs" class="cs">0</span>
+
+            </div>
+            <div class="your-score">
+                YOUR  <br> SCORE <br>
+                <span id="ys" class="ys">0</span>
+            </div>
+        </section>
+    </section>
+    <!-- <section class="game-area">
+        <div class="play-area">
+            <div class="item">
+                <img src="images/fist.png" class="fist" alt="Rock">
+            </div>
+            <div class="item">
+                <img src="images/paper.png" class="paper" alt="Paper">
+            </div>
+            <br>
+            <div class="item">
+                <img src="images/scissor.png" class="scissor" alt="Sissor">
+    
+            </div>
+        </div>
+
+
+        
+    </section> -->
+    
+      <div id="play-board">
+
+        <div class="lines">
+          <div class="line-1 line"></div>
+          <div class="line-3 line"></div>
+          <div class="line-2 line"></div>
+        </div>
+
+        <div class="actions">
+          <div class="rock-div action" id="rock" onclick="startGame('rock')">
+            <img src="./images/rock.png" alt="rock" width="65px" />
+          </div>
+
+          <div class="paper-div action" id="paper" onclick="startGame('paper')">
+            <img src="./images/paper.png" alt="paper" width="65px" />
+          </div>
+          <div class="scissor-div action" id="scissor" onclick="startGame('scissor')">
+            <img src="./images/scissor.png" alt="scissor" width="50px" />
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="rulesandnext">
+        <div class="rulebook hidden">
+            <button id=cross>X</button>
+            <h1>Game Rules</h1>
+            <ul>
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper,
+                    scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+        </div>
+        <div class="container">
+            <button class="sub-box" id="togglerulebook">Rules</button>
+            <!-- <a href="final.html">
+                <button class="sub-box hidden">Next</button>
+            </a> -->
+            <button class=" sub-box " id="next-btn" onclick="nextpage()">Next</button>
+            </div>
+
+            <!-- <div class="buttons">
+                <button class="rules-btn btn">rules</button>
+                <button class="next-btn btn" id="next-btn">next</button>
+              </div> -->
+    </div>
+
+    <!-- results board -->
+
+    <div id="result-board">
+
+        <div class="boxes user-box-1">
+          <div class="boxes user-box-2">
+            <div class="boxes user-box-3">
+
+              <div id="you-picked" class="picked-div">
+                <h3 class="picked">You Picked</h3>
+                <div class="result-img action user-result"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <p id="result-text-1"></p>
+          <p id="result-text-2">AGAINST PC</p>
+          <button class="filled-btn play-again" id="play-again">
+            play again
+          </button>
+          <button class="filled-btn tie-up" id="replay">replay</button>
+        </div>
+
+        <div class="boxes pc-box-1">
+          <div class="boxes pc-box-2">
+            <div class="boxes pc-box-3">
+
+              <div id="pc-picked" class="picked-div">
+                <h3 class="picked">PC Picked</h3>
+                <div class="result-img action pc-result"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- won game  -->
+      <section class="won-game">
+        <img src="/images/star.png" alt="stars" id="stars" />
+        <img src="./images/trophy.png" alt="Trophy" id="trophy" />
+        <h2 class="won-game-heading" id="wonhead">hi</h2>
+        <h6 class="won-game-sub-heading" id="wonsubhead">byr</h6>
+        <button class="filled-btn large" onclick="playAgain()">play again</button>
+        <button class="filled-btn large" onclick="reSetPlay()">resetPlay</button>
+        <div class="buttons">
+          <button class="rules-btn btn">rules</button>
+        </div>
+      </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
